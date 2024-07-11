@@ -29,6 +29,11 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('user.dashboard')->with('success', 'User registered successfully!');
+        return redirect()->route('dashboard')->with('success', 'User registered successfully!');
+    }
+
+    public function dashboard ()
+    {
+        return view('dashboard');
     }
 }
